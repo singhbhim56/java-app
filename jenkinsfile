@@ -10,11 +10,19 @@ pipeline{
 
             steps{
             gitCheckout{
-                branch: "main",
+                branch: 'main',
                 url:"https://github.com/singhbhim56/java-app.git" 
             }
             }
         }
+         stage('Unit test maven'){
+
+            steps{
+                script{
+                    mvnTest{}
+                }
+            }
+                
     }
 }
         
